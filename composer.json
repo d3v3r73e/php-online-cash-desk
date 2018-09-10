@@ -1,11 +1,11 @@
 {
-    "name": "kayukoff/online-cash-desk",
+    "name": "d3v3r73e/online-cash-desk",
     "description": "PHP SDK for integrating with online cash desks",
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/kayukoff/php-online-cash-desk",
     "require": {
-        "php": ">=5.6.0",
+        "php": ">=7.1.0",
         "ext-curl": "*",
         "ext-json": "*",
         "zendframework/zend-db": "*"
