@@ -26,7 +26,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "https://github.com/kayukoff/php-online-cash-desk"
+            "url": "https://github.com/d3v3r73e/php-online-cash-desk"
         }
     ]
 ...
@@ -85,6 +85,7 @@ $receipt->setOrderId('ORDER-ID-12345')
     ->setCustomerEmail('customer@email.com')
     ->addItem($item1)
     ->addItem($item2)
+    ->setShopOrderId('555')
 ;
 
 // Добавляем чек в кассу
