@@ -47,10 +47,12 @@ abstract class Receipt extends \OnlineCashDesk\AbstractReceipt
 
     protected static $paymentTypeIdToInternal = [
         self::PAYMENT_TYPE_ELECTRONIC => 1,
+        self::PAYMENT_TYPE_ADVANCE => 2
     ];
 
     protected static $paymentTypeInternalToId = [
         1 => self::PAYMENT_TYPE_ELECTRONIC,
+        2 => self::PAYMENT_TYPE_ADVANCE
     ];
 
 

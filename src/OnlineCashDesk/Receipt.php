@@ -29,7 +29,7 @@ interface Receipt
 
     // Вид оплаты
     const PAYMENT_TYPE_ELECTRONIC = 0x01;  // электронный (безнал)
-
+    const PAYMENT_TYPE_ADVANCE = 0x02;
 
     /**
      * Возвращает дату и время создания чека

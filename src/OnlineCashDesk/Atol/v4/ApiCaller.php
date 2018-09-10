@@ -10,7 +10,8 @@ use OnlineCashDesk\ApiResponse;
 
 class ApiCaller implements \OnlineCashDesk\ApiCaller
 {
-    const API_ENDPOINT = 'https://online.atol.ru/possystem/v4/';
+//    const API_ENDPOINT = 'https://online.atol.ru/possystem/v4/';
+    const API_ENDPOINT = 'https://testonline.atol.ru/possystem/v4/';
 
     private $lastError = null;
 

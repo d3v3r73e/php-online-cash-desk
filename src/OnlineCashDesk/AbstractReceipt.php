@@ -37,6 +37,8 @@ abstract class AbstractReceipt implements Receipt
     protected static $paymentTypeInternalToId = [];
 
 
+    protected $shopOrderId = null;
+
     /**
      * Receipt constructor.
      *
@@ -52,6 +54,16 @@ abstract class AbstractReceipt implements Receipt
         }
 
         $this->init();
+    }
+
+    public function setShopOrderId($shopOrderId)
+    {
+        $this->shopOrderId = $shopOrderId;
+    }
+
+    public function getShopOrderId()
+    {
+        return $this->shopOrderId;
     }
 
     public function getType()
@@ -146,8 +158,7 @@ abstract class AbstractReceipt implements Receipt
         // тип чека продажа, вид оплаты электронный (безнал)
         $this->setCreationDateTime(new \DateTime('now'))
             ->setType(Receipt::TYPE_SELL)
-            ->setPaymentType(Receipt::PAYMENT_TYPE_ELECTRONIC)
-        ;
+            ->setPaymentType(Receipt::PAYMENT_TYPE_ELECTRONIC);
     }
 
     /**

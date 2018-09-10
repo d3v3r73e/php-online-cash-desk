@@ -4,6 +4,7 @@ CREATE TABLE `receipts` (
   `receipt_data` VARCHAR(2048) NOT NULL,
   `response_data` VARCHAR(2048) DEFAULT NULL,
   `status` TINYINT(4) NOT NULL,
+  `order_id` INT(11) NOT NULL
   PRIMARY KEY (`id`),
   KEY `status` (`status`)
 ) DEFAULT CHARSET=utf8;

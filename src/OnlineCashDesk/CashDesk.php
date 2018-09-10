@@ -94,7 +94,7 @@ class CashDesk
             $receiptData = json_decode($row->receipt_data, true);
             $responseData = json_decode($row->response_data, true);
             if ($result = $apiCaller->checkReceiptStatus($receiptData, $responseData)) {
-                $row->response_data = json_encode($result->getResponseData());
+                $row->response_data = json_encode($result->getResponseData(), JSON_UNESCAPED_UNICODE);
                 $row->status = $result->getReceiptStatus();
 
                 $this->receiptsStore->update($row->getArrayCopy(), [
@@ -121,7 +121,7 @@ class CashDesk
         foreach ($pendingReceiptsRaw as $row) {
             $receiptData = json_decode($row->receipt_data, true);
             if ($result = $apiCaller->sendReceipt($receiptData)) {
-                $row->response_data = json_encode($result->getResponseData());
+                $row->response_data = json_encode($result->getResponseData(), JSON_UNESCAPED_UNICODE);
                 $row->status = $result->getReceiptStatus();
 
                 $this->receiptsStore->update($row->getArrayCopy(), [
@@ -151,8 +151,9 @@ class CashDesk
 
         $this->receiptsStore->insert([
             'created' => $receipt->getCreationDateTime()->format('Y-m-d H:i:s'),
-            'receipt_data' => json_encode($receipt->toArray()),
+            'receipt_data' => json_encode($receipt->toArray(), JSON_UNESCAPED_UNICODE),
             'status' => Receipt::STATUS_NEW,
+            'order_id' => $receipt->getShopOrderId()
         ]);
     }
 }
